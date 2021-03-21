@@ -1,0 +1,81 @@
+20:25:02 **** Incremental Build of configuration Debug for project Test2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:24: error: 'huart' undeclared (first use in this function); did you mean 'huart2'?
+  114 |     HAL_UART_Transmit(&huart, (uint8_t *)"HAL_NOK", 10, 1000);
+      |                        ^~~~~
+      |                        huart2
+../Core/Src/main.c:114:24: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+20:25:08 **** Incremental Build of configuration Debug for project Test2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:24: error: 'huart' undeclared (first use in this function); did you mean 'huart2'?
+  114 |     HAL_UART_Transmit(&huart, (uint8_t *)"HAL_NOK", 10, 1000);
+      |                        ^~~~~
+      |                        huart2
+../Core/Src/main.c:114:24: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+20:25:39 **** Incremental Build of configuration Debug for project Test2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test2.elf
+ 
+arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
+arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
+Finished building: Test2.bin
+ 
+arm-none-eabi-size   Test2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8916	     20	   3652	  12588	   312c	Test2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test2.list
+ 
+20:26:35 **** Incremental Build of configuration Debug for project Test2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test2.elf
+ 
+arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
+arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
+Finished building: Test2.bin
+ 
+arm-none-eabi-size   Test2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8920	     20	   3652	  12592	   3130	Test2.elf
+Finished building: Test2.list
+Finished building: default.size.stdout
+ 
+ 
+20:48:56 **** Incremental Build of configuration Debug for project Test2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test2.elf
+ 
+arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
+arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
+Finished building: Test2.bin
+ 
+arm-none-eabi-size   Test2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8888	     20	   3652	  12560	   3110	Test2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test2.list
+ 
+05:11:44 **** Clean-only build of configuration Debug for project Test2 ****
+make -j2 clean 
+rm -rf *
+ 
+05:11:45 **** Clean-only build of configuration Debug for project test3 ****
+make -j2 clean 
+rm -rf *
+ 
