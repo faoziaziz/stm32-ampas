@@ -1,0 +1,7 @@
+21:17:12 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
+make -j2 clean 
+rm -rf *
+ 
+
+21:17:13 Build Finished. 0 errors, 0 warnings. (took 1s.220ms)
+

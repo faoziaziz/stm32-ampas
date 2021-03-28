@@ -44,7 +44,9 @@ TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart2_rx;
-
+uint8_t UART2_rxBuffer[12] = {0};
+uint8_t rx_buffer[12] = {0};
+uint16_t UART2_rxIndex=0;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -56,6 +58,7 @@ static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
+
 
 /* USER CODE END PFP */
 
@@ -96,21 +99,47 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, rxBuff, 12);
-  HAL_UART_Transmit_IT(@huart2, txBuff, 12);
-  /* USER CODE END 2 */
 
+  /* USER CODE END 2 */
+  HAL_UART_Transmit(&huart2, (uint8_t *)"am i succes\r\n", 12, 100);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
+	  if(HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, 12)==HAL_OK){
 
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	UART2_rxIndex=0;
+	if(huart->Instance == USART2){
 
+	        if(UART2_rxIndex == 0){
+	            memset(&rx_buffer, 0, sizeof(rx_buffer));
+	        }
+
+	        rx_buffer[UART2_rxIndex] = UART2_rxBuffer;
+
+	        if(rx_buffer[UART2_rxIndex] == '\n'){
+	            //printf("%s", rx_buffer);
+	            HAL_UART_Transmit(&huart2, rx_buffer, 12, 100);
+	        }
+
+	        UART2_rxIndex++;
+
+	        // Receive next character (1 byte)
+	        HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer, 1);
+
+	    }
+
+
+
+}
 /**
   * @brief System Clock Configuration
   * @retval None

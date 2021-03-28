@@ -1,81 +1,65 @@
-20:25:02 **** Incremental Build of configuration Debug for project Test2 ****
+21:08:56 **** Incremental Build of configuration Debug for project Led_toggle_DMA ****
 make -j2 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:114:24: error: 'huart' undeclared (first use in this function); did you mean 'huart2'?
-  114 |     HAL_UART_Transmit(&huart, (uint8_t *)"HAL_NOK", 10, 1000);
-      |                        ^~~~~
-      |                        huart2
-../Core/Src/main.c:114:24: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
-"make -j2 all" terminated with exit code 2. Build might be incomplete.
-20:25:08 **** Incremental Build of configuration Debug for project Test2 ****
-make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:114:24: error: 'huart' undeclared (first use in this function); did you mean 'huart2'?
-  114 |     HAL_UART_Transmit(&huart, (uint8_t *)"HAL_NOK", 10, 1000);
-      |                        ^~~~~
-      |                        huart2
-../Core/Src/main.c:114:24: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
-"make -j2 all" terminated with exit code 2. Build might be incomplete.
-20:25:39 **** Incremental Build of configuration Debug for project Test2 ****
-make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Test2.elf
+../Core/Src/main.c:105:72: warning: passing argument 3 of 'HAL_DMA_Start' makes integer from pointer without a cast [-Wint-conversion]
+  105 |    HAL_DMA_Start(&hdma_memtomem_dma2_stream0,(uint32_t ) &led_data[0], &GPIOA->ODR,1);
+      |                                                                        ^~~~~~~~~~~
+      |                                                                        |
+      |                                                                        volatile uint32_t * {aka volatile long unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:663:89: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'volatile uint32_t *' {aka 'volatile long unsigned int *'}
+  663 | HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+      |                                                                                ~~~~~~~~~^~~~~~~~~~
+../Core/Src/main.c:111:72: warning: passing argument 3 of 'HAL_DMA_Start' makes integer from pointer without a cast [-Wint-conversion]
+  111 |    HAL_DMA_Start(&hdma_memtomem_dma2_stream0,(uint32_t ) &led_data[1], &GPIOA->ODR,1);
+      |                                                                        ^~~~~~~~~~~
+      |                                                                        |
+      |                                                                        volatile uint32_t * {aka volatile long unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:663:89: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'volatile uint32_t *' {aka 'volatile long unsigned int *'}
+  663 | HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+      |                                                                                ~~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "Led_toggle_DMA.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Led_toggle_DMA/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Led_toggle_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Led_toggle_DMA.elf
  
-arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
-arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
-Finished building: Test2.bin
+arm-none-eabi-objdump -h -S  Led_toggle_DMA.elf  > "Led_toggle_DMA.list"
+arm-none-eabi-objcopy  -O binary  Led_toggle_DMA.elf  "Led_toggle_DMA.bin"
+Finished building: Led_toggle_DMA.bin
  
-arm-none-eabi-size   Test2.elf 
+arm-none-eabi-size   Led_toggle_DMA.elf 
    text	   data	    bss	    dec	    hex	filename
-   8916	     20	   3652	  12588	   312c	Test2.elf
+   9660	     24	   1736	  11420	   2c9c	Led_toggle_DMA.elf
 Finished building: default.size.stdout
  
-Finished building: Test2.list
+Finished building: Led_toggle_DMA.list
  
-20:26:35 **** Incremental Build of configuration Debug for project Test2 ****
+21:10:21 **** Incremental Build of configuration Debug for project Led_toggle_DMA ****
 make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Test2.elf
- 
-arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
-arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
-Finished building: Test2.bin
- 
-arm-none-eabi-size   Test2.elf 
+arm-none-eabi-size   Led_toggle_DMA.elf 
    text	   data	    bss	    dec	    hex	filename
-   8920	     20	   3652	  12592	   3130	Test2.elf
-Finished building: Test2.list
+   9660	     24	   1736	  11420	   2c9c	Led_toggle_DMA.elf
 Finished building: default.size.stdout
  
- 
-20:48:56 **** Incremental Build of configuration Debug for project Test2 ****
-make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/Test2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Test2.elf
- 
-arm-none-eabi-objdump -h -S  Test2.elf  > "Test2.list"
-arm-none-eabi-objcopy  -O binary  Test2.elf  "Test2.bin"
-Finished building: Test2.bin
- 
-arm-none-eabi-size   Test2.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8888	     20	   3652	  12560	   3110	Test2.elf
-Finished building: default.size.stdout
- 
-Finished building: Test2.list
- 
-05:11:44 **** Clean-only build of configuration Debug for project Test2 ****
+21:17:12 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
 make -j2 clean 
 rm -rf *
  
-05:11:45 **** Clean-only build of configuration Debug for project test3 ****
+21:17:13 **** Clean-only build of configuration Debug for project Test2 ****
+make -j2 clean 
+rm -rf *
+ 
+21:17:14 **** Clean-only build of configuration Debug for project test3 ****
+make -j2 clean 
+rm -rf *
+ 
+21:17:15 **** Clean-only build of configuration Debug for project test4 ****
 make -j2 clean 
 rm -rf *
  

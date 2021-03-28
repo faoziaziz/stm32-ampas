@@ -1,7 +1,7 @@
-05:11:44 **** Clean-only build of configuration Debug for project Test2 ****
+21:17:13 **** Clean-only build of configuration Debug for project Test2 ****
 make -j2 clean 
 rm -rf *
  
 
-05:11:45 Build Finished. 0 errors, 0 warnings. (took 820ms)
+21:17:14 Build Finished. 0 errors, 0 warnings. (took 1s.40ms)
 
