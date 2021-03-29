@@ -1,7 +1,7 @@
-21:17:13 **** Clean-only build of configuration Debug for project Test2 ****
+10:03:58 **** Clean-only build of configuration Debug for project Test2 ****
 make -j2 clean 
-rm -rf *
- 
+make: *** No rule to make target 'clean'.  Stop.
+"make -j2 clean" terminated with exit code 2. Build might be incomplete.
 
-21:17:14 Build Finished. 0 errors, 0 warnings. (took 1s.40ms)
+10:03:59 Build Failed. 1 errors, 0 warnings. (took 1s.130ms)
 
