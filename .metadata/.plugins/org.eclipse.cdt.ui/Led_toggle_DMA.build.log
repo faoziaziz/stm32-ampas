@@ -1,7 +1,7 @@
-10:03:56 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
+13:55:03 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
 make -j2 clean 
 make: *** No rule to make target 'clean'.  Stop.
 "make -j2 clean" terminated with exit code 2. Build might be incomplete.
 
-10:03:57 Build Failed. 1 errors, 0 warnings. (took 1s.813ms)
+13:55:04 Build Failed. 1 errors, 0 warnings. (took 824ms)
 

@@ -1,98 +1,112 @@
-10:03:06 **** Incremental Build of configuration Debug for project LED_toggle_IT ****
+12:37:50 **** Incremental Build of configuration Debug for project DMA_UART ****
 make -j2 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:49: warning: passing argument 2 of 'HAL_DMA_Start_IT' makes integer from pointer without a cast [-Wint-conversion]
-  105 |   HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, &led_data[0], &GPIOA->ODR, 1);
-      |                                                 ^~~~~~~~~~~~
-      |                                                 |
-      |                                                 uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Src/main.c:21:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:664:70: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  664 | HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-      |                                                             ~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:105:63: warning: passing argument 3 of 'HAL_DMA_Start_IT' makes integer from pointer without a cast [-Wint-conversion]
-  105 |   HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, &led_data[0], &GPIOA->ODR, 1);
-      |                                                               ^~~~~~~~~~~
-      |                                                               |
-      |                                                               volatile uint32_t * {aka volatile long unsigned int *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Src/main.c:21:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:664:91: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'volatile uint32_t *' {aka 'volatile long unsigned int *'}
-  664 | HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-      |                                                                                  ~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:109:49: warning: passing argument 2 of 'HAL_DMA_Start_IT' makes integer from pointer without a cast [-Wint-conversion]
-  109 |   HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, &led_data[1], &GPIOA->ODR, 1);
-      |                                                 ^~~~~~~~~~~~
-      |                                                 |
-      |                                                 uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Src/main.c:21:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:664:70: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  664 | HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-      |                                                             ~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:109:63: warning: passing argument 3 of 'HAL_DMA_Start_IT' makes integer from pointer without a cast [-Wint-conversion]
-  109 |   HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream0, &led_data[1], &GPIOA->ODR, 1);
-      |                                                               ^~~~~~~~~~~
-      |                                                               |
-      |                                                               volatile uint32_t * {aka volatile long unsigned int *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:286,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Src/main.c:21:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:664:91: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'volatile uint32_t *' {aka 'volatile long unsigned int *'}
-  664 | HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-      |                                                                                  ~~~~~~~~~^~~~~~~~~~
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
 arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
 arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
 arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
-arm-none-eabi-gcc -o "LED_toggle_IT.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/LED_toggle_IT/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_toggle_IT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LED_toggle_IT.elf
+arm-none-eabi-gcc -o "DMA_UART.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/DMA_UART/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_UART.elf
  
-arm-none-eabi-size   LED_toggle_IT.elf 
-arm-none-eabi-objdump -h -S  LED_toggle_IT.elf  > "LED_toggle_IT.list"
+arm-none-eabi-size   DMA_UART.elf 
+arm-none-eabi-objdump -h -S  DMA_UART.elf  > "DMA_UART.list"
    text	   data	    bss	    dec	    hex	filename
-  10140	     24	   1736	  11900	   2e7c	LED_toggle_IT.elf
+  10728	     20	   1732	  12480	   30c0	DMA_UART.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objcopy  -O binary  LED_toggle_IT.elf  "LED_toggle_IT.bin"
-Finished building: LED_toggle_IT.bin
+arm-none-eabi-objcopy  -O binary  DMA_UART.elf  "DMA_UART.bin"
+Finished building: DMA_UART.bin
  
-Finished building: LED_toggle_IT.list
+Finished building: DMA_UART.list
  
-10:03:31 **** Incremental Build of configuration Debug for project LED_toggle_IT ****
+12:38:35 **** Incremental Build of configuration Debug for project DMA_UART ****
 make -j2 all 
-arm-none-eabi-size   LED_toggle_IT.elf 
+arm-none-eabi-size   DMA_UART.elf 
    text	   data	    bss	    dec	    hex	filename
-  10140	     24	   1736	  11900	   2e7c	LED_toggle_IT.elf
+  10728	     20	   1732	  12480	   30c0	DMA_UART.elf
 Finished building: default.size.stdout
  
-10:03:54 **** Clean-only build of configuration Debug for project LED_toggle_IT ****
+12:39:10 **** Incremental Build of configuration Debug for project DMA_UART ****
+make -j2 all 
+arm-none-eabi-size   DMA_UART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10728	     20	   1732	  12480	   30c0	DMA_UART.elf
+Finished building: default.size.stdout
+ 
+12:46:06 **** Incremental Build of configuration Debug for project DMA_UART ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "DMA_UART.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/DMA_UART/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_UART.elf
+ 
+arm-none-eabi-objdump -h -S  DMA_UART.elf  > "DMA_UART.list"
+arm-none-eabi-objcopy  -O binary  DMA_UART.elf  "DMA_UART.bin"
+Finished building: DMA_UART.bin
+ 
+arm-none-eabi-size   DMA_UART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10728	     20	   1732	  12480	   30c0	DMA_UART.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_UART.list
+ 
+12:46:33 **** Incremental Build of configuration Debug for project DMA_UART ****
+make -j2 all 
+arm-none-eabi-size   DMA_UART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10728	     20	   1732	  12480	   30c0	DMA_UART.elf
+Finished building: default.size.stdout
+ 
+13:47:30 **** Incremental Build of configuration Debug for project DMA_UART ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:241:62: error: expected ';' before '}' token
+  241 |  HAL_UART_Transmit(&huart2, (uint8_t*)DEST_ADDRESS, 12, 1000)
+      |                                                              ^
+      |                                                              ;
+  242 | }
+      | ~                                                             
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j2 all" terminated with exit code 2. Build might be incomplete.
+13:48:30 **** Incremental Build of configuration Debug for project DMA_UART ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "DMA_UART.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/faoziaziz/STM32CubeIDE/workspace_1.6.0/DMA_UART/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_UART.elf
+ 
+arm-none-eabi-objdump -h -S  DMA_UART.elf  > "DMA_UART.list"
+arm-none-eabi-objcopy  -O binary  DMA_UART.elf  "DMA_UART.bin"
+Finished building: DMA_UART.bin
+ 
+arm-none-eabi-size   DMA_UART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11188	     20	   1732	  12940	   328c	DMA_UART.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_UART.list
+ 
+13:55:01 **** Clean-only build of configuration Debug for project DMA_UART ****
 make -j2 clean 
 rm -rf *
  
-10:03:56 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
+13:55:02 **** Clean-only build of configuration Debug for project LED_toggle_IT ****
 make -j2 clean 
 make: *** No rule to make target 'clean'.  Stop.
 "make -j2 clean" terminated with exit code 2. Build might be incomplete.
-10:03:58 **** Clean-only build of configuration Debug for project Test2 ****
+13:55:03 **** Clean-only build of configuration Debug for project Led_toggle_DMA ****
 make -j2 clean 
 make: *** No rule to make target 'clean'.  Stop.
 "make -j2 clean" terminated with exit code 2. Build might be incomplete.
-10:03:59 **** Clean-only build of configuration Debug for project test3 ****
+13:55:04 **** Clean-only build of configuration Debug for project Test2 ****
 make -j2 clean 
 make: *** No rule to make target 'clean'.  Stop.
 "make -j2 clean" terminated with exit code 2. Build might be incomplete.
-10:04:00 **** Clean-only build of configuration Debug for project test4 ****
+13:55:05 **** Clean-only build of configuration Debug for project test3 ****
+make -j2 clean 
+make: *** No rule to make target 'clean'.  Stop.
+"make -j2 clean" terminated with exit code 2. Build might be incomplete.
+13:55:05 **** Clean-only build of configuration Debug for project test4 ****
 make -j2 clean 
 make: *** No rule to make target 'clean'.  Stop.
 "make -j2 clean" terminated with exit code 2. Build might be incomplete.

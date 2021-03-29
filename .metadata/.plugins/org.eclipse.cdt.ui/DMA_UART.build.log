@@ -1,0 +1,7 @@
+13:55:01 **** Clean-only build of configuration Debug for project DMA_UART ****
+make -j2 clean 
+rm -rf *
+ 
+
+13:55:02 Build Finished. 0 errors, 0 warnings. (took 932ms)
+
